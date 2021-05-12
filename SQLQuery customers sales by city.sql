@@ -1,5 +1,6 @@
 --list of customers
 
+
 SELECT city, sum(sales)   
 from customers
 group by city
