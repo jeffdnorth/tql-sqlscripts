@@ -7,6 +7,4 @@ where Sat < 1000
 group by statecode
 having  count (*) > 1
 order by count (*) desc
-  
-	
 
