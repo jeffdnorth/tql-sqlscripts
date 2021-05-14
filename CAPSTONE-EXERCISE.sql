@@ -7,9 +7,9 @@ GO
 use PrsDb;
 --Start creating tables
 GO
-create table Users (
+create table Usersduplicate (
 	Id int primary key identity (1,1) ,
-	Username varchar not null unique ,
+	Username varchar (30) not null unique ,
 	Password varchar (30) unique ,
 	Firstname varchar (30) ,
 	Lastname varchar (30) ,
@@ -18,6 +18,8 @@ create table Users (
 	IsReviewer bit ,
 	IsAdmin bit ,
 	);
+go
+select * from Usersduplicate
 go 
 select * from Users
 go
@@ -68,6 +70,36 @@ create table RequestLine (
 	); 
 go
 select * from Requestline
+go
+select * from Usersduplicate
+go
+insert into Usersduplicate (Username,Password,Firstname,Lastname,
+			Phone,email,IsReviewer,IsAdmin)
+	values
+	('jeffno','xxyy','jeff','north','5132355788','jnorth@tql.com',
+		'1', '0' )
+go 
+insert into Usersduplicate (Username,Password,Firstname,Lastname,
+			Phone,Email,IsReviewer,IsAdmin)
+	values ('harrlo', 'xxxx','harry','lowered','6145642323', 'harry@gmail.com', '1','1'),
+			('stevbe', 'yyyx', 'steven', 'bennett', '3452345689', 'sbennett@yahoo.com', '0','0' )
+go
+select * from vendors
+go
+insert into vendors (Code, Name,Address,City,State,Zip,Phone,Email)
+	values ('amaz','amazon','evilmonop dr', 'parkcity','ca','45150', '5135553445',
+			'get@amazon.com')
+go
+insert into vendors (Code,Name,Address,	City,State,Zip,Phone,Email)
+	values ('krog','krogers','65 fargo st','cinncinati','oh','45234',
+			'5132345678','get@krogers.com'),
+			('stap','staples','78 wellspring rd', 'los angeles','ca','23156',
+			'6147813456','get@staples.com')
+go
+insert into Products (PartNbr,NAME,Price,Unit,PhotoPath,VendorId)
+	  
+
+	
 	
 	
  
