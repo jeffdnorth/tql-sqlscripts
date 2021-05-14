@@ -47,7 +47,16 @@ create table Products (
 	VendorId int foreign key references Vendors (Id)
 	) ;
 go
-select * from Products
+create table ProductsDuplicate (
+	Id int primary key identity (1,1),
+	PartNbr varchar (30) not null unique,
+	name varchar (30) not null,
+	Price dec (11,2) not null,
+	Unit varchar (30),
+	PhotoPath varchar (255),
+	VendorId int foreign key references Vendors (Id) )
+go
+select * from ProductsDuplicate
 go
 create table Requests (
 	Id int primary key identity (1,1) ,
@@ -96,7 +105,13 @@ insert into vendors (Code,Name,Address,	City,State,Zip,Phone,Email)
 			('stap','staples','78 wellspring rd', 'los angeles','ca','23156',
 			'6147813456','get@staples.com')
 go
-insert into Products (PartNbr,NAME,Price,Unit,PhotoPath,VendorId)
+select * from ProductsDuplicate
+go
+insert into Products (PartNbr,NAME,Price,Unit,VendorId)
+	values ('100', 'lamp', '100.00', '1',             ),
+	       ('200', 'desk', '500.00', '1' ,            ),
+		   ('300', 'stockedbarfridge', '100.00', '1',
+
 	  
 
 	
