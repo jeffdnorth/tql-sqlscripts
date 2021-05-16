@@ -107,22 +107,9 @@ insert into vendors (Code,Name,Address,	City,State,Zip,Phone,Email)
 go
 select * from ProductsDuplicate
 go
-insert into Products (PartNbr,NAME,Price,Unit,VendorId)
-	values ('100', 'lamp', '100.00', '1',             ),
-	       ('200', 'desk', '500.00', '1' ,            ),
-		   ('300', 'stockedbarfridge', '100.00', '1',
+insert into ProductsDuplicate(PartNbr,NAME,Price,Unit,VendorId)
+	values ('100', 'lamp', '100.00', '1', (select id from vendors where code = 'amaz' )),
+	       ('200', 'desk', '500.00', '1' , (select id from vendors where code = 'stap' )),
+		   ('300', 'barfridge','1000.00', '1', (select id from vendors where code = 'krog' ) )
 
 	  
-
-	
-	
-	
- 
-
-	
-		
-
-
-
-
-

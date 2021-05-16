@@ -23,3 +23,8 @@ insert into Customers (Code, Name)
 insert into Customers (Code,Name,Sales)
 	values ('max', 'max tech', 200);
 GO
+ALTER table customers
+	add updated datetime;
+GO
+Alter table customers
+	alter column name varchar (50) not null;
