@@ -33,7 +33,7 @@ end;
 go
 select * from Users
 go
-exec updateuser 4, 'xx', 'xx', 'xx','xx','null','null', 1,1;
+exec updateuser 1002, 'xx', 'xx', 'xx','xx','null','null', 1,1;
 GO
 
 create or alter procedure UpdateUser
